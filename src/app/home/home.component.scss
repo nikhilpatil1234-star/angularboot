@@ -1,0 +1,26 @@
+.inp-drop-container {
+  display: flex;
+  //   border: 1px solid red;
+  width: 100%;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  .input-search-container {
+    margin: 0px 10px;
+    height: 44px;
+    width: 550px;
+    input[type="search"] {
+      outline: none;
+      height: 100%;
+    }
+  }
+  .dropdown-container {
+    .mat-container {
+      width: 141px;
+      .optionlist {
+        display: contents;
+        width: 141px;
+      }
+    }
+  }
+}

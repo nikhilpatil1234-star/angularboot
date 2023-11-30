@@ -1,0 +1,32 @@
+<div class="login-container">
+  <form
+    class="form-container"
+    [formGroup]="reactiveForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <h1>Welcome back Login</h1>
+    <mat-form-field class="field">
+      <mat-label>Gmail</mat-label>
+      <input matInput formControlName="gmail" />
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>password</mat-label>
+      <input matInput formControlName="phone" />
+    </mat-form-field>
+    <button mat-raised-button (click)="gotoDashboard()">Login</button>
+    <p>
+      Dont have account ?<span
+        style="color: #1d366f; font-size: 16px"
+        (click)="openDialog()"
+        >Registor</span
+      >
+    </p>
+    <h3 (click)="gotoHome()">Go Back</h3>
+  </form>
+</div>
+<div>
+  {{ dataService | json }}
+  <!-- <h2>email:{{ email }}</h2>
+  <h2>password:{{ phone }}</h2>
+  {{ objData }} -->
+</div>

@@ -1,0 +1,62 @@
+<app-navbar />
+<form>
+  <div class="inp-drop-container">
+    <div class="form-control input-search-container">
+      <input
+        type="search"
+        name="search"
+        placeholder="search titles"
+        aria-label="Search"
+        style="width: 500px; border: none"
+        [(ngModel)]="filteredData"
+      />
+      <img src="../../assets/search-24px.png" />
+    </div>
+
+    <div class="dropdown-container">
+      <mat-form-field
+        appearance="fill"
+        class="mat-container"
+        style="height: 75px; margin-top: 23px; padding: 4px"
+      >
+        <mat-label>Select</mat-label>
+        <mat-select
+          class="optionlist"
+          [(ngModel)]="selectedValue"
+          [ngModelOptions]="{ standalone: true }"
+          (ngModelChange)="selectOption($event)"
+        >
+          <mat-option *ngFor="let data of foods" [value]="data">
+            <!-- {{ data | json }} -->
+            <img
+              [src]="data.avatar_url"
+              width="40px"
+              height="40px"
+              style="margin-left: 20px; border-radius: 50px"
+            />
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- {{ selectedValue | json }} -->
+    </div>
+  </div>
+</form>
+
+<div
+  style="display: flex; flex-wrap: wrap; flex-direction: row; width: 98vw"
+  class="container"
+>
+  <!-- <div class="card-container" *ngFor="let x of data"> -->
+  <div class="card-container" *ngFor="let x of data | filter : filteredData">
+    <!-- {{ x | json }} -->
+    <div style="margin: 10px" (click)="getDataId(x)" #part>
+      <div class="img-container">
+        <img [src]="x.url" width="200px" style="border-radius: 5px" />
+      </div>
+      <div class="title-container">
+        <p>{{ x.title | slice : 0 : 20 }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <app-card-detail-model [single]="singleData"></app-card-detail-model> -->

@@ -1,0 +1,91 @@
+<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+  <div class="alert alert-danger">
+    <!-- {{ console.log(errorMsg) }} -->
+  </div>
+  <form>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <!-- {{ console.log(firstFormGroup) }} -->
+        <ng-template matStepLabel>Name</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            placeholder="Last name, First name"
+            formControlName="firstCtrl"
+            required
+          />
+          <!-- {{ console.log(firstFormGroup.value.firstCtrl) }} -->
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Email</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="abc@gmail.com"
+            formControlName="secondCtrl"
+            required
+          />
+          <!-- {{ console.log(secondFormGroup.value.secondCtrl) }} -->
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Address</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <input
+            matInput
+            formControlName="thirdCtrl"
+            placeholder="Ex. 1 Main St, New York, NY"
+            required
+          />
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="fourthFormGroup">
+      <form [formGroup]="fourthFormGroup">
+        <ng-template matStepLabel>Phone Number</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input
+            matInput
+            placeholder="Phone number"
+            formControlName="fourthCtrl"
+            required
+          />
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="onSubmit()">Submit</button>
+      </div>
+    </mat-step>
+  </form>
+</mat-stepper>
+<div style="display: flex; justify-content: center; margin-top: 10px">
+  <button matDialogClose mat-raised-button>Close</button>
+</div>

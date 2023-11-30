@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-container container">
+  <div class="container-fluid">
+    <img
+      src="../../../assets/e2ehiring.png"
+      alt="logo"
+      width="118px"
+      height="40px"
+      (click)="gotoIntro()"
+    />
+
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      mdbCollapse
+    >
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"> Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">FAQs</a>
+        </li>
+      </ul>
+
+      <form class="d-flex" style="margin: 0px 10px">
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          style="margin: 0px 10px; border: none"
+        >
+          Teach on e2eHiring
+        </button>
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          style="margin: 0px 10px"
+          (click)="gotoLogin()"
+        >
+          Login
+        </button>
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          style="
+            background-color: #1d366f;
+            color: white;
+            border: 1px solid #1d366f;
+          "
+          (click)="openDialog()"
+        >
+          Registor Now
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>

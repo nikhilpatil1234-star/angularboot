@@ -1,0 +1,38 @@
+.login-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .form-container {
+    h1 {
+      color: #1d366f;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eeeeee;
+    height: 350px;
+    width: 40%;
+    margin-top: 30px;
+    button {
+      width: 80%;
+    }
+  }
+  .field {
+    width: 80%;
+  }
+  p {
+    margin-top: 10px;
+  }
+  h3 {
+    border: 1px solid #eeeeee;
+    width: 90px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 1px #eeeeee;
+  }
+}
